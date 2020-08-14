@@ -6,9 +6,11 @@
 #include <fcntl.h>
 
 const char *semName = "BuiTrongDat";
+#define SEM_PERMS           (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
+#define SEM_INIT_VAL        (1)
 int main(int argc, char *argv[])
 {
-    sem_t *sem_id = sem_open(semName, O_CREAT, 0777, 0);
+    sem_t *sem_id = sem_open(semName, O_CREAT,SEM_PERMS, SEM_INIT_VAL);
     if (sem_id == SEM_FAILED){
         perror("Parent  : [sem_open] Failed\n");
     }

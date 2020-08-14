@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/root/projects/ETC/process2",
+            "program": "/root/projects/ETC/semaphore1",
             "args": [],
             "stopAtEntry": false,
             "cwd": "/root/projects/ETC",
