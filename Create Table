@@ -1,0 +1,11 @@
+        ui->qualityMonitTable->setStyleSheet("QHeaderView::section {background-color: rgb(204,204,204);border-style: none; border-bottom: 1px solid white; border-right: 1px solid white;} QTableWidget{border: 1px solid rgb(204,204,204);}");
+        ui->qualityMonitTable->setSelectionMode(QAbstractItemView::NoSelection);
+        ui->qualityMonitTable->horizontalHeader()->setFixedHeight(MONIT_ROW_HEIGHT);
+        ui->qualityMonitTable->horizontalHeader()->setDefaultSectionSize(MONIT_COLUMN_WIDTH);
+        ui->qualityMonitTable->verticalHeader()->setDefaultSectionSize(MONIT_ROW_HEIGHT);
+        ui->qualityMonitTable->setShowGrid(true);
+        ui->qualityMonitTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+        ui->qualityMonitTable->setRowCount(0);
+        ui->qualityMonitTable->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
+        ui->qualityMonitTable->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+        ui->qualityMonitTable->verticalHeader()->hide();
