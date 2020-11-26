@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmUnitSetting</class>
+ <widget class="QWidget" name="FrmUnitSetting">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>319</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Unit Setting</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>162</width>
+     <height>334</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="lbl_01">
+      <property name="text">
+       <string>pressure unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="cmb_01">
+      <property name="accessibleName">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lbl_02">
+      <property name="text">
+       <string>temperature unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="cmb_02">
+      <property name="accessibleName">
+       <string>2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="lbl_03">
+      <property name="text">
+       <string>position unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QComboBox" name="cmb_03">
+      <property name="accessibleName">
+       <string>3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lbl_04">
+      <property name="text">
+       <string>screw speed unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QComboBox" name="cmb_04">
+      <property name="accessibleName">
+       <string>4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="lbl_05">
+      <property name="text">
+       <string>time unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QComboBox" name="cmb_05">
+      <property name="accessibleName">
+       <string>5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="lbl_06">
+      <property name="text">
+       <string>ratio unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QComboBox" name="cmb_06">
+      <property name="accessibleName">
+       <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="lbl_07">
+      <property name="text">
+       <string>shot unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QComboBox" name="cmb_07">
+      <property name="accessibleName">
+       <string>10</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="lbl_08">
+      <property name="text">
+       <string>speed unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QComboBox" name="cmb_08">
+      <property name="accessibleName">
+       <string>11</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="lbl_09">
+      <property name="text">
+       <string>weight unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QComboBox" name="cmb_09">
+      <property name="accessibleName">
+       <string>12</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="lbl_10">
+      <property name="text">
+       <string>ton unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QComboBox" name="cmb_10">
+      <property name="accessibleName">
+       <string>14</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="lbl_11">
+      <property name="text">
+       <string>pressure unit 2:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QComboBox" name="cmb_11">
+      <property name="accessibleName">
+       <string>16</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="lbl_12">
+      <property name="text">
+       <string>time unit 2:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QComboBox" name="cmb_12">
+      <property name="accessibleName">
+       <string>17</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="lbl_13">
+      <property name="text">
+       <string>energy unit:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QComboBox" name="cmb_13">
+      <property name="accessibleName">
+       <string>18</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="regsiterBtn">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>100</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="machNoCmb">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>10</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>All Machine</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="machNoLb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Machine No.</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitBtn">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>130</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Table</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="tableCmb">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>50</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Quality Monitor Table</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Recipe</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>machNoCmb</tabstop>
+  <tabstop>tableCmb</tabstop>
+  <tabstop>cmb_01</tabstop>
+  <tabstop>cmb_02</tabstop>
+  <tabstop>cmb_03</tabstop>
+  <tabstop>cmb_04</tabstop>
+  <tabstop>cmb_05</tabstop>
+  <tabstop>cmb_06</tabstop>
+  <tabstop>cmb_07</tabstop>
+  <tabstop>cmb_08</tabstop>
+  <tabstop>cmb_09</tabstop>
+  <tabstop>cmb_10</tabstop>
+  <tabstop>cmb_11</tabstop>
+  <tabstop>cmb_12</tabstop>
+  <tabstop>cmb_13</tabstop>
+  <tabstop>regsiterBtn</tabstop>
+  <tabstop>exitBtn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

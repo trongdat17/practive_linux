@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmAddressSetup</class>
+ <widget class="QWidget" name="FrmAddressSetup">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>652</width>
+    <height>393</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Address Book Setup</string>
+  </property>
+  <widget class="QPushButton" name="registerButton">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>350</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Meiryo</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>REGISTER</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>350</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Meiryo</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>EXIT</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="addressTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>631</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::AllEditTriggers</set>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="verticalScrollMode">
+    <enum>QAbstractItemView::ScrollPerPixel</enum>
+   </property>
+   <property name="horizontalScrollMode">
+    <enum>QAbstractItemView::ScrollPerPixel</enum>
+   </property>
+   <property name="rowCount">
+    <number>1</number>
+   </property>
+   <property name="columnCount">
+    <number>3</number>
+   </property>
+   <row/>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Email Address</string>
+    </property>
+   </column>
+   <column/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

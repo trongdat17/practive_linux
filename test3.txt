@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmEmailSetup</class>
+ <widget class="QWidget" name="FrmEmailSetup">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>789</width>
+    <height>734</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>E-mail Setup</string>
+  </property>
+  <widget class="QGroupBox" name="groupBoxEmailFunction">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>751</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="accessibleDescription">
+    <string/>
+   </property>
+   <property name="title">
+    <string>Email function is confirmed.</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <widget class="QGroupBox" name="boxSetupEmail">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>731</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>6</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SMTPAddress</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cbxMailCertification">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>34</y>
+       <width>201</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>User ID</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>6</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>E-mail Address</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>60</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtPassword">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>60</y>
+       <width>181</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtUserId">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>90</y>
+       <width>181</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtSMTPAddress">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>6</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtEmailAddress">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>6</y>
+       <width>241</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cbxConnectionType">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>34</y>
+       <width>141</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>SMTP</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>SMTPS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>STARTTLS</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>34</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SMTP Method</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>34</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SMTP Authentication</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Port</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtPortNumber">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>60</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="boxTransmitType">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>731</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>12</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Machine No.</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cbxMachineNo">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chBxMan">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>12</y>
+       <width>41</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Man</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chBxUnMan">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>12</y>
+       <width>61</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Unman</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="boxEmailAddressToSend">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>731</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>To:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDelete">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>60</y>
+       <width>121</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAdd">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>19</y>
+       <width>121</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listEmailAddressToSend">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>501</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="boxProductStart">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>731</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QCheckBox" name="chBxProductionStart">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>17</y>
+       <width>101</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Production Start</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="boxProductStartInfo">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>10</y>
+       <width>571</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <widget class="QCheckBox" name="chBxMachineNoBox1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Machine No.</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxMaterial">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Material</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxCompleteBy">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>57</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Complete by</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxTimeRemain">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>57</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Time Remain</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxProductCodeBox1">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Product Code</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxRecipeBox1">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recipe</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxIDBox1">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxTotalCount">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Total Count</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxTimeBox1">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxCycleTime">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cycle Time</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="boxMachineStop">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>731</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QGroupBox" name="boxMachineStopInfo">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>10</y>
+       <width>571</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QCheckBox" name="chBxProductCodeBox2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Product Code</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxIDBox2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxTimeBox2">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxMachineNoBox2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Machine No.</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxDescription">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="chBxMachineStop">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>17</y>
+       <width>101</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Machine Stop</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="boxProductComplete">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>731</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QGroupBox" name="boxProductCompleteInfo">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>10</y>
+       <width>571</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QCheckBox" name="chBxMachineNoBox3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Machine No.</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxResin">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Resin</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxTotalShot">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>57</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Total Shot</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxGoodShot">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>57</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Good Shot</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxProductCodeBox3">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Product Code</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxRecipeBox3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recipe</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxIDBox3">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxRegrind">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Regrind</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxTimeBox3">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>7</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxResinLot">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>32</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Resin Lot</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxRejectShot">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>57</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reject Shot</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxStopNumber">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>57</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stop Number</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxProductionTime">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>82</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Production Time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxStopTime">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>82</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stop Time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxStartTime">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>82</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxRejectRate">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>82</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reject Rate</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chBxRunningRate">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>107</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Running Rate</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="chBxProductionComplete">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>17</y>
+       <width>131</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Production Complete</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btnRegister">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>690</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnExit">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>690</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnTestEmail">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>690</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Test Email</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>groupBoxEmailFunction</tabstop>
+  <tabstop>txtSMTPAddress</tabstop>
+  <tabstop>txtEmailAddress</tabstop>
+  <tabstop>cbxConnectionType</tabstop>
+  <tabstop>cbxMailCertification</tabstop>
+  <tabstop>txtUserId</tabstop>
+  <tabstop>txtPassword</tabstop>
+  <tabstop>cbxMachineNo</tabstop>
+  <tabstop>chBxMan</tabstop>
+  <tabstop>chBxUnMan</tabstop>
+  <tabstop>listEmailAddressToSend</tabstop>
+  <tabstop>btnAdd</tabstop>
+  <tabstop>btnDelete</tabstop>
+  <tabstop>chBxProductionStart</tabstop>
+  <tabstop>chBxMachineNoBox1</tabstop>
+  <tabstop>chBxProductCodeBox1</tabstop>
+  <tabstop>chBxIDBox1</tabstop>
+  <tabstop>chBxTimeBox1</tabstop>
+  <tabstop>chBxMaterial</tabstop>
+  <tabstop>chBxRecipeBox1</tabstop>
+  <tabstop>chBxTotalCount</tabstop>
+  <tabstop>chBxCycleTime</tabstop>
+  <tabstop>chBxCompleteBy</tabstop>
+  <tabstop>chBxTimeRemain</tabstop>
+  <tabstop>chBxMachineStop</tabstop>
+  <tabstop>chBxMachineNoBox2</tabstop>
+  <tabstop>chBxProductCodeBox2</tabstop>
+  <tabstop>chBxIDBox2</tabstop>
+  <tabstop>chBxTimeBox2</tabstop>
+  <tabstop>chBxDescription</tabstop>
+  <tabstop>chBxProductionComplete</tabstop>
+  <tabstop>chBxMachineNoBox3</tabstop>
+  <tabstop>chBxProductCodeBox3</tabstop>
+  <tabstop>chBxIDBox3</tabstop>
+  <tabstop>chBxTimeBox3</tabstop>
+  <tabstop>chBxRecipeBox3</tabstop>
+  <tabstop>chBxResin</tabstop>
+  <tabstop>chBxRegrind</tabstop>
+  <tabstop>chBxResinLot</tabstop>
+  <tabstop>chBxTotalShot</tabstop>
+  <tabstop>chBxGoodShot</tabstop>
+  <tabstop>chBxRejectShot</tabstop>
+  <tabstop>chBxStopNumber</tabstop>
+  <tabstop>chBxRejectRate</tabstop>
+  <tabstop>chBxStartTime</tabstop>
+  <tabstop>chBxProductionTime</tabstop>
+  <tabstop>chBxStopTime</tabstop>
+  <tabstop>chBxRunningRate</tabstop>
+  <tabstop>btnTestEmail</tabstop>
+  <tabstop>btnRegister</tabstop>
+  <tabstop>btnExit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
