@@ -1,0 +1,182 @@
+https://wiki.qt.io/How_to_create_a_multi_language_application
+
+
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QFile>
+#include <QDir>
+#include <QTextStream>
+#include <QTextCodec>
+#include <QDebug>
+#include <QMessageBox>
+#include "form.h"
+#include "frame.h"
+#include <QHeaderView>
+#include <QCheckBox>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    readfile();
+    ui->Tex_btn->setText(tr("Bùi TRọng Đạt"));
+    initTableData();
+//    QMessageBox msgBox;
+//    msgBox.setWindowTitle("Test");
+//    msgBox.critical(this,"data test","1111111");
+//    msgBox.setText("The document has been modified.");
+//    msgBox.setInformativeText("Do you want to save your changes?");
+//    msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+//    msgBox.setDefaultButton(QMessageBox::Save);
+//    int ret = msgBox.exec();
+//    switch (ret)
+//    {
+//    case QMessageBox::Save:
+//        qDebug()<<"Save was clicked"<<"\n";
+//        // Save was clicked
+//        break;
+//    case QMessageBox::Discard:
+//        qDebug()<<"Don't Save was clicked"<<"\n";
+//        // Don't Save was clicked
+//        break;
+//    case QMessageBox::Cancel:
+//        qDebug()<<"Cancel was clicked"<<"\n";
+//        // Cancel was clicked
+//        break;
+//    default:
+//        // should never be reached
+//        break;
+//    }
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::writefile()
+{
+    QFile file("out.txt");
+    if (!file.open(QIODevice::WriteOnly))
+        return;
+    QString data = "Bùi Trọng Đạt";
+    //QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    //QByteArray te = data.toUtf8();
+    //QByteArray dataConvert = codec->fromUnicode(data);
+    QTextStream out(&file);
+    out.setCodec("UTF-8");
+    QByteArray byteArray = convertFromUnicode(data);
+    out << byteArray << 49 << "\n";
+    file.close();
+}
+
+void MainWindow::readfile()
+{
+    QFile file("out.txt");
+    if (!file.open(QIODevice::ReadOnly))
+        return;
+    QTextStream in(&file);
+    in.setCodec("UTF-8");
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+        QString text = codec->toUnicode(line.toUtf8());
+        qDebug()<<text<<"\n";
+    }
+}
+
+
+QByteArray MainWindow::convertFromUnicode(QString str)
+{
+    QTextCodec* pCodec = QTextCodec::codecForName("UTF-8");
+    if (pCodec != nullptr)
+    {
+        return pCodec->fromUnicode(str);
+    }
+    else
+    {
+        return str.toUtf8();
+    }
+}
+
+void MainWindow::initTableData()
+{
+    //QStringList label;
+    QList<QStringList> dataFile;
+//    label<<"No "<<"  "<<"Data Nsme"<<"Data type 1"<<"Data type 2"<<"Data type 3"<<"Janpan"<<"English"<<"China";
+//    label<<"Data type 4"<<"Data type 5"<<"Data type 6";
+//    ui->tableWidget->setColumnCount(label.count());
+//    ui->tableWidget->setHorizontalHeaderLabels(label);
+    ui->tableWidget->horizontalHeader()->setStyleSheet( "QHeaderView::section {background-color:white; border:none; border-right:1px solid gray;}");
+    ui->tableWidget->horizontalHeader()->setHighlightSections(false);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView:: ResizeToContents);
+    ui->tableWidget->verticalHeader()->setVisible(false);
+    readFileData(dataFile);
+    for(int i = 0; i < dataFile.count(); i++)
+    {
+        ui->tableWidget->insertRow(i);
+        if(dataFile.at(i).count()< 11)
+        {
+            continue;
+        }
+        QStringList newdata = dataFile.at(i);
+        for(int j = 0; j < newdata.count() + 1; j++)
+        {
+            if( j == 1)
+            {
+                QWidget *checkBoxWidget = new QWidget();
+                QCheckBox *checkBox = new QCheckBox();      // We declare and initialize the checkbox
+                QHBoxLayout *layoutCheckBox = new QHBoxLayout(checkBoxWidget); // create a layer with reference to the widget
+                layoutCheckBox->addWidget(checkBox);            // Set the checkbox in the layer
+                layoutCheckBox->setAlignment(Qt::AlignCenter);  // Center the checkbox
+                layoutCheckBox->setContentsMargins(0,0,0,0);    // Set the zero padding
+                ui->tableWidget->setCellWidget(i,j,checkBoxWidget);
+            }
+            else {
+                QTableWidgetItem* dataCell = new QTableWidgetItem();
+                if(j == 0)
+                {
+                    dataCell->setText(newdata.at(j));
+                   ui->tableWidget->setItem(i, j, dataCell);
+                   dataCell->setTextAlignment(Qt::AlignHCenter);
+                }
+                else {
+                    dataCell->setText(newdata.at(j-1));
+                    ui->tableWidget->setItem(i, j, dataCell);
+                }
+            }
+        }
+    }
+}
+
+bool MainWindow::readFileData(QList<QStringList> &dataFile)
+{
+    QString pathFile = QDir::currentPath() + "/data/RecipeHead001.ip3";
+    QFile file(pathFile);
+    if (!file.open(QIODevice::ReadOnly))
+        return false;
+    QTextStream in(&file);
+    in.setCodec("UTF-8");
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+        QString text = codec->toUnicode(line.toUtf8());
+        QStringList data = text.split(",");
+        dataFile.append(data);
+    }
+    return true;
+}
+
+void MainWindow::on_Tex_btn_clicked()
+{
+    Form* test = new Form();
+    test->show();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    Frame* test = new Frame();
+    test->show();
+    test->close();
+}
