@@ -1,0 +1,3 @@
+    this->setWindowFlags(Qt::Dialog);
+    this->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    this->setAttribute(Qt::WA_DeleteOnClose);
