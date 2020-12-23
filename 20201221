@@ -1,3 +1,11 @@
     this->setWindowFlags(Qt::Dialog);
     this->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
+
+
+QHeaderView::section{
+	background-color:#CCCCCC;
+	text-align: left;
+	border: 1px solid gray;
+	margin: 1px;
+}
