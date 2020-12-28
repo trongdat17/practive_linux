@@ -1,0 +1,101 @@
+if (!m_bIsDeletedAll)
+            {
+                // delete rows deleted
+                for (int i = 0; i < m_listDeletedRow.size(); i++)
+                {
+                    sSqlQuery = QString("DELETE FROM MasterCode Where Master='%1' AND Machine = '%2' AND Mold = '%3' ").arg(m_listDeletedRow[i].at(0)).
+                            arg(m_listDeletedRow[i].at(1)).arg(m_listDeletedRow[i].at(2));
+                    bRet = query.exec(sSqlQuery);
+                    if (!bRet)
+                    {
+                        LOG_ERROR(query.lastError().text());
+                        errorCode = DB_ERROR_QUERY;
+                        goto disconnectDb;
+                    }
+                }
+            }
+            else
+            {
+                m_listDeletedRow.clear();
+                sSqlQuery = QString("DELETE FROM MasterCode");
+                bRet = query.exec(sSqlQuery);
+                if (!bRet)
+                {
+                    LOG_ERROR(query.lastError().text());
+                    errorCode = DB_ERROR_QUERY;
+                    goto disconnectDb;
+                }
+            }
+            // insert new data to table
+            foreach (QStringList listField, listData) {
+                sSqlQuery = QString("SELECT Count(Master) FROM MasterCode Where Master='%1' AND Machine = '%2' AND Mold = '%3'").arg(listField[OFFSET_MASTERCODE_MASTER]).
+                        arg(listField[OFFSET_MASTERCODE_MACHINE]).arg(listField[OFFSET_MASTERCODE_MOLD]);
+                bRet = query.exec(sSqlQuery);
+                if (!bRet)
+                {
+                    LOG_ERROR(query.lastError().text());
+                    errorCode = DB_ERROR_QUERY;
+                    goto disconnectDb;
+                }
+                while (query.next()) {
+                    nNumberOfRecord = query.value(0).toInt();
+                    break;
+                }
+
+                if (nNumberOfRecord > 0)
+                {
+                    sqlDb.transaction();
+                    query.prepare("Update MasterCode "
+                                  "Set Model=?,Material=?,Color=?,"
+                                  "Other1=?,Other2=?,Other3=?,RegistDate=?,UpdateDate=? "
+                                  "Where Master=? AND Machine=? AND Mold=?");
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MODEL]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MATERIAL]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_COLOR]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_OTHER1]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_OTHER2]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_OTHER3]);
+                    query.addBindValue(QDateTime::fromString(listField[OFFSET_MASTERCODE_REGIST_DATE], DATE_FORMAT));
+                    query.addBindValue(QDateTime::fromString(listField[OFFSET_MASTERCODE_UPDATE_DATE], DATE_FORMAT));
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MASTER]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MACHINE]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MOLD]);
+                    bRet = query.exec();
+                    if (!bRet)
+                    {
+                        sqlDb.commit();
+                        LOG_ERROR(query.lastError().text());
+                        errorCode = DB_ERROR_QUERY;
+                        goto disconnectDb;
+                        break;
+                    }
+                    sqlDb.commit();
+                }
+                else
+                {
+                    sqlDb.transaction();
+                    query.prepare("INSERT INTO MasterCode "
+                                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)") ;
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MASTER]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MACHINE]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MODEL]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MOLD]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_MATERIAL]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_COLOR]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_OTHER1]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_OTHER2]);
+                    query.addBindValue(listField[OFFSET_MASTERCODE_OTHER3]);
+                    query.addBindValue(QDateTime::fromString(listField[OFFSET_MASTERCODE_REGIST_DATE], DATE_FORMAT));
+                    query.addBindValue(QDateTime::fromString(listField[OFFSET_MASTERCODE_UPDATE_DATE], DATE_FORMAT));
+
+                    bRet = query.exec();
+                    if (!bRet)
+                    {
+                        sqlDb.commit();
+                        LOG_ERROR(query.lastError().text());
+                        errorCode = DB_ERROR_QUERY;
+                        goto disconnectDb;
+                        break;
+                    }
+                    sqlDb.commit();
+                }
