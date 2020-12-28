@@ -99,3 +99,37 @@ if (!m_bIsDeletedAll)
                     }
                     sqlDb.commit();
                 }
+                
+                
+                QString sSqlStatement = "SELECT Master, Machine, Model, Mold, Material, Color, Other1, Other2, Other3, RegistDate, UpdateDate "
+                                        "FROM MasterCode WHERE Master = '" + sMasterCodeRequested + "' ORDER BY Master;";
+                QSqlDatabase sqlDb = DatabaseControl::instance().getDatabase(m_sConnectionName);
+                QSqlQuery sqlQuery(sqlDb);
+                bRet = sqlQuery.exec(sSqlStatement);
+                if (!bRet)
+                {
+                    LOG_ERROR(sqlQuery.lastError().text());
+                    m_responsePacket.status = STATUS_IPAQET_ERROR;
+                    m_responsePacket.errorNumber = HEAD_COUNT_NG;
+                    m_responsePacket.errorMessage = StringMessageControl::instance().getStringMessage(m_dataPacket.language, GROUP_SEARCH_RECIPE, QUERY_DATABASE_ERROR);
+                }
+                else
+                {
+                    QString sRecord = "";
+                    while (sqlQuery.next()) {
+                        if (sqlQuery.record().count() <= DB_OFFSET_MASTERCODE_UPDATEDATE)
+                        {
+                            continue;
+                        }
+                        sRecord = QString("%1,%2,%3,%4,%5,%6,%7,%8,%9\r\n")
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_MASTER    ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_MACHINE   ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_MODEL     ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_MOLD      ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_MATERIAL  ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_COLOR     ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_OTHER1    ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_OTHER2    ).toString())
+                                .arg(sqlQuery.value(DB_OFFSET_MASTERCODE_OTHER3    ).toString());
+                        m_responsePacket.data.append(sRecord);
+                    }
