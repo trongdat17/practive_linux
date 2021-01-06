@@ -18,3 +18,7 @@ https://viblo.asia/p/hoc-regular-expression-va-cuoc-doi-ban-se-bot-kho-updated-v
     
     validate(m_codeDefList[2],regexText);
     validate(m_codeDefList[3],regexNum);
+    
+    
+https://cheatography.com/davechild/cheat-sheets/regular-expressions/
+https://regexone.com/lesson/letters_and_digits?
